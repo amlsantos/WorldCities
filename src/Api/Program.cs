@@ -190,7 +190,7 @@ public static class Program
         
         var assemblies = AppDomain.CurrentDomain.GetAssemblies();
         
-        services.AddMediatR(assemblies);
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assemblies));
         services.AddFluentValidation(assemblies);
     }
 
